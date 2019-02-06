@@ -50,3 +50,9 @@ Head over to the [ethereum remix IDE](http://remix.ethereum.org/):
 1. From the wallet contract, contribute 5 wei, check the balances
 1. To implement the hack: from the wallet contract, click the payout function, then check the balances (note this will take longer due to the loop)
 1. Note the payout can't be used again immediately because the balance of the wallet address was finally set to zero
+
+## Resources:
+
+Consensys
+1. [General Philosophy](https://consensys.github.io/smart-contract-best-practices/general_philosophy/)
+2. [Best Practices](https://consensys.github.io/smart-contract-best-practices/)
