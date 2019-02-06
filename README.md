@@ -17,7 +17,16 @@ function withdrawCoins(){
     }
 ```
 
-The vulnerability can be mitigated by moving the ```balances[msg.sender] = 0;``` up two lines above the call to the payout() function from the wallet.  
+The vulnerability can be mitigated by moving the ```balances[msg.sender] = 0;``` up two lines above the call to the payout() function from the wallet:
+
+```
+function withdrawCoins(){
+        uint withdrawAmount = balances[msg.sender];
+        balances[msg.sender] = 0;
+        Wallet wallet = Wallet(msg.sender);
+        wallet.payout.value(withdrawAmount)();
+    }
+```
 
 
 ## Running this example:
