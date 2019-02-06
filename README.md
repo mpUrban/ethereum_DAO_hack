@@ -5,9 +5,8 @@ This smart contract was used to experiment with the Ethereum DAO hack smart cont
 The DAO aimed to operate as a venture capital fund — allowing users to donate towards ideas they wised to support.  The value proposition with blockchain intended to prevent a significant amount of fees centralized venture capital sites take, such as Kickstarter and Indiegogo.  This is a common theme to use blockchain to combat business models based on economic rent-seeking. 
 
 The contract contained a vulnerability known as re-entrancy.  
-(expand)
 
-From the fundraiser contract, the withdrawCoins() function is calling the payout() function from the wallet contract.  The wallet contract payout() function is then in turn calling the withdrawCoins() function from the fundraiser.  This prevents the withdrawCoins() function from reaching the balances[msg.sender] = 0; statement which zeroes out the balance of the wallet.  
+From the fundraiser contract, the withdrawCoins() function is calling the payout() function from the wallet contract.  The wallet contract payout() function is then in turn calling the withdrawCoins() function from the fundraiser.  This prevents the withdrawCoins() function from reaching the ```balances[msg.sender] = 0;``` statement which zeroes out the balance of the wallet.  
 
 ```
 function withdrawCoins(){
@@ -17,6 +16,8 @@ function withdrawCoins(){
         balances[msg.sender] = 0;
     }
 ```
+
+The vulnerability can be mitigated by moving the ```balances[msg.sender] = 0;``` up two lines above the call to the payout() function from the wallet.  
 
 
 ## Running this example:
