@@ -1,6 +1,6 @@
 # Ethereum DAO Hack Study
 
-This smart contract was used to experiment with the Ethereum DAO hack smart contract vulnerability as part of a Udacity course.  Hackers breached the smart contract for $60M of Ether ($ETH)
+This repo was used to experiment with and take notes on the Ethereum DAO hack smart contract vulnerability as part of a Udacity course.  Hackers breached the smart contract for $60M of Ether ($ETH)
 
 The DAO aimed to operate as a venture capital fund — allowing users to donate towards ideas they wised to support.  The value proposition with blockchain intended to prevent a significant amount of fees centralized venture capital sites take, such as Kickstarter and Indiegogo.  This is a common theme to use blockchain to combat business models based on economic rent-seeking. 
 
